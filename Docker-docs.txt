@@ -28,5 +28,11 @@ Run the container
 - huzidev/docker-node:0.0.1.RELEASE is the name of image with that specific tag
 
 Stop the running container
+
 - docker container stop <id of that container>
 - EX: if container id is 451661bae486 and their is no other container with the id starting with 451 so we can simply just type (docker container stop 451)
+
+Push the Docker image to Docker's hub
+
+- docker push huzidev/docker-node:0.0.1.RELEASE
+- which is the exact name of ours image with that specific version
