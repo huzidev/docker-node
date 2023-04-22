@@ -1,12 +1,16 @@
-const express = require("express");
-const server = express();
+const fs = require("fs");
+const dayjs = require("dayjs");
 
-const port = 3000
+function main() {
+    try {
+        // mmm for alphabetical month, mm for months in number hh:mmA, A for AM, PM
+        const format = "YYYY-MMM-DD, ddd hh:mmA";
+        const dateFormat = dayjs().format(format);
+        console.log(dateFormat);
+        fs.writeFileSync('date-log.txt', dateFormat);
+    } catch (e) {
+        console.log("Error", e);
+    }
+}
 
-server.get("/", (req, res) => {
-    res.status(200).send("Node app for saving date with docker");
-})
-
-server.listen(port, () => {
-    console.log(`Server with docker is running on port ${port}`);
-})
+main();
