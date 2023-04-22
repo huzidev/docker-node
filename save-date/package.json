@@ -1,5 +1,5 @@
 {
-  "name": "docker-node",
+  "name": "docker-date-logger",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
