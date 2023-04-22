@@ -1,0 +1,47 @@
+Create Dockerfile and add the following commands
+- FROM node:slim
+- WORKDIR /app
+- COPY . /app # (. is source destination)
+- RUN npm install
+- EXPOSE 3000 # (make sure the port is same as of ours node app)
+- CMD node index.js
+
+To build the Docker image after creating the Dockerfile
+- docker build -t huzidev/docker-node:0.0.1.RELEASE .
+- Here -t is for tag which allows us to give custom name to ours image else wise the image name will be random
+- Adfter tag name put : and version so if any other update might come for that image therefore the first one will be :0.0.1.RELEASE else wise it'll says latest instead of specific version
+- In docker . means current directory NOT ./
+
+docker images 
+- For list of all images ever created
+
+docker container ls
+- For list of all the RUNNING containers
+
+Image is just information/boiler-plate to run the container
+
+Run the container
+
+- docker container run -d -p 3000:3000 huzidev/docker-node:0.0.1.RELEASE
+- -d means Detached mode (run in background)
+- -p for accessing the port the port on the left side of colon is the port going to be used in browser and the one on the right side of colon is for docker port
+- huzidev/docker-node:0.0.1.RELEASE is the name of image with that specific tag
+
+Stop the running container
+- docker container stop <id of that container>
+- EX: if container id is 451661bae486 and their is no other container with the id starting with 451 so we can simply just type (docker container stop 451)
+
+Push the Docker image to Docker's hub
+
+- docker push huzidev/docker-node:0.0.1.RELEASE
+- which is the exact name of ours image with that specific version
+
+Pull the Docker image from the Docker's hub
+
+- Their will be two tabs Overview and tags make sure to copy the command from the tags tab hence the version will also be written their
+- docker pull huzidev/docker-node (Copied from overview tab)
+- docker pull huzidev/docker-node:0.0.1.RELEASE (Copied from tags tab)
+
+Whoever wanted to use that node-app will just pull the docker image from the following code
+docker pull huzidev/docker-node:0.0.1.RELEASE
+and run the container no need to install node and any dependencies etc
