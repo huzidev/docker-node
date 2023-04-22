@@ -1,16 +1,23 @@
-const fs = require("fs");
+const express = require("express");
 const dayjs = require("dayjs");
+const server = express();
+const port = 3000;
 
-function main() {
+server.get("/", (req, res) => {
+    res.status(200).send("Hello, Docker this is Home page")
+})
+
+server.get("/date", (req, res) => {
+    let date;
     try {
-        // mmm for alphabetical month, mm for months in number hh:mmA, A for AM, PM
         const format = "YYYY-MMM-DD, ddd hh:mmA";
-        const dateFormat = dayjs().format(format);
-        console.log(dateFormat);
-        fs.writeFileSync('date-log.txt', dateFormat);
-    } catch (e) {
-        console.log("Error", e);
+        date = dayjs().format(format);
+    } catch (error) {
+        console.log("Error", error);
     }
-}
+    res.status(200).send(`Today is ${date}`)
+})
 
-main();
+server.listen(port, () => {
+    console.log("Server is running on port 3000");
+})
