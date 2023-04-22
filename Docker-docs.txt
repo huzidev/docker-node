@@ -36,3 +36,9 @@ Push the Docker image to Docker's hub
 
 - docker push huzidev/docker-node:0.0.1.RELEASE
 - which is the exact name of ours image with that specific version
+
+Pull the Docker image from the Docker's hub
+
+- Their will be two tabs Overview and tags make sure to copy the command from the tags tab hence the version will also be written their
+- docker pull huzidev/docker-node (Copied from overview tab)
+- docker pull huzidev/docker-node:0.0.1.RELEASE (Copied from tags tab)
