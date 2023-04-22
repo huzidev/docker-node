@@ -1,7 +1,7 @@
 const express = require("express");
 const server = express();
 
-const port = 3000;
+const port = 3000
 
 server.get("/", (req, res) => {
     res.status(200).send("Node app for saving date with docker");
