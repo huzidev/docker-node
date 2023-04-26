@@ -7,17 +7,13 @@ Create Dockerfile and add the following commands
 - CMD node index.js
 
 To build the Docker image after creating the Dockerfile
-- docker build -t huzidev/docker-node:0.0.1.RELEASE .
+- docker build -t huzidev/docker-node:0.0.1.RELEASE . (.) means current path of that specific folder where node script and Dockerfile is present
 - Here -t is for tag which allows us to give custom name to ours image else wise the image name will be random
 - Adfter tag name put : and version so if any other update might come for that image therefore the first one will be :0.0.1.RELEASE else wise it'll says latest instead of specific version
 - In docker . means current directory NOT ./
 
 docker images 
 - For list of all images ever created
-
-delete images
-- docker rmi <id of that image>
-- docker rmi -f <id of that image>
 
 docker container ls
 - For list of all the RUNNING containers
