@@ -18,6 +18,10 @@ docker images
 docker container ls
 - For list of all the RUNNING containers
 
+delete images
+- docker rmi <id of that image>
+- docker rmi -f <id of that image> (-f means force delete)
+
 Image is just information/boiler-plate to run the container
 
 Run the container
