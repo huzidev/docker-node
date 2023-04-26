@@ -12,6 +12,7 @@ server.get("/date", (req, res) => {
     try {
         const format = "YYYY-MMM-DD, ddd hh:mmA";
         date = dayjs().format(format);
+        console.log("Today is", date);
     } catch (error) {
         console.log("Error", error);
     }
@@ -19,5 +20,5 @@ server.get("/date", (req, res) => {
 })
 
 server.listen(port, () => {
-    console.log("Server is running on port 3000");
+    console.log(`Server is running on port ${port}`);
 })
