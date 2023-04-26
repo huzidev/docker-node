@@ -15,6 +15,10 @@ To build the Docker image after creating the Dockerfile
 docker images 
 - For list of all images ever created
 
+delete images
+- docker rmi <id of that image>
+- docker rmi -f <id of that image>
+
 docker container ls
 - For list of all the RUNNING containers
 
